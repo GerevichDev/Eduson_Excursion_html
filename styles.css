@@ -1,0 +1,940 @@
+/* ==========================================================================
+   1. Шрифты
+   ========================================================================== */
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url("./fonts/OpenSans-Regular.woff2") format("woff2"),
+        url("./fonts/OpenSans-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        url("./fonts/OpenSans-Bold.woff2") format("woff2"),
+        url("./fonts/OpenSans-Bold.woff") format("woff");
+}
+
+/* ==========================================================================
+   2. Переменные
+   ========================================================================== */
+
+:root {
+    /* Отступ контейнера. Меняется через медиазапросы ниже.
+       Управляет и «отрицательным отступом» у декоративных фонов. */
+    --container-pad: 15px;
+}
+
+/* Планшет */
+@media (min-width: 768px) {
+    :root {
+        --container-pad: 30px;
+    }
+}
+
+/* Десктоп */
+@media (min-width: 1200px) {
+    :root {
+        --container-pad: 50px;
+    }
+}
+
+/* ==========================================================================
+   3. Базовые стили (mobile first — для мобильного экрана)
+   ========================================================================== */
+
+html {
+    /* height: 100% нужен, чтобы min-height: 100% на body работал */
+    height: 100%;
+}
+
+.page {
+    min-height: 100%;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000;
+
+    /* Скрываем горизонтальный скролл, который может появиться из-за
+       декоративных ::before. clip — безопасная замена hidden,
+       не ломает position: sticky у потомков. */
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+/* Утилита: скрыть визуально, но оставить доступным для скринридеров */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Общий контейнер — на мобильном на всю ширину */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+    box-sizing: border-box;
+}
+
+/* Универсальный брейкпоинт для контейнера (используется
+   как ориентир, когда сетке пора становиться многоколоночной) */
+
+/* ==========================================================================
+   4. Шапка
+   ========================================================================== */
+
+.page-header {
+    padding: 15px 0;
+}
+
+.navbar__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar__item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.navbar__link {
+    color: #000;
+    text-decoration: none;
+}
+
+.navbar__link:hover {
+    opacity: 0.5;
+}
+
+/* Фокус с клавиатуры — по стандарту доступности */
+.navbar__link:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   5. Первый экран (intro)
+   ========================================================================== */
+
+.intro {
+    background-image: url('./images/intro.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #242424;
+    color: #fff;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+.intro__title {
+    margin: 0 0 20px;
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.intro__text p {
+    margin: 0;
+}
+
+.intro__text p:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   6. Контент: на мобильном — одна колонка, сайдбар идёт ниже
+   ========================================================================== */
+
+.page-content {
+    background-color: #fff;
+}
+
+.page-content__main {
+    background-color: #fff;
+}
+
+/* Общие стили для секций */
+.page-section {
+    position: relative;
+    padding: 25px 0;
+}
+
+/* Модификатор: секция с серым фоном на всю ширину viewport.
+   Фон выходит за пределы контейнера за счёт отрицательных
+   отступов, равных --container-pad. */
+.page-section--with-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(-1 * var(--container-pad));
+    right: calc(-1 * var(--container-pad));
+    background-color: #f2f2f2;
+}
+
+/* Общий стиль для заголовков секций */
+.program__title,
+.auditory__title,
+.prices__title,
+.services__title,
+.reviews__title {
+    margin: 0 0 20px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   7. Блок «program»
+   ========================================================================== */
+
+.program__text p {
+    margin: 0;
+}
+
+.program__text p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.program__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.program__image-wrapper {
+    width: 100%;
+    height: 220px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.program__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.program__subtitle {
+    margin: 0 0 15px;
+    font-size: 20px;
+}
+
+.program__list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.program__list li:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   8. Блок «auditory»
+   ========================================================================== */
+
+.auditory__content {
+    position: relative;
+    z-index: 1;
+}
+
+.auditory__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.auditory__image-wrapper {
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.auditory__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.auditory__bottom {
+    margin-top: 20px;
+}
+
+.auditory__list {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+}
+
+/* ==========================================================================
+   9. Блок «prices»
+   ========================================================================== */
+
+.prices__text p {
+    margin: 0;
+}
+
+.prices__text p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+/* Обёртка для горизонтального скролла на мобильном.
+   Без неё таблица ломает ширину страницы. */
+.prices__table-wrapper {
+    margin-top: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.prices__table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+.prices__table th {
+    padding: 12px;
+    background-color: #242424;
+    font-weight: 700;
+    color: #fff;
+    text-align: left;
+    font-size: 14px;
+}
+
+.prices__table td {
+    padding: 12px;
+    font-size: 14px;
+}
+
+.prices__table tbody tr:nth-child(odd) td {
+    background-color: #f2f2f2;
+}
+
+.prices__table th:first-child,
+.prices__table td:first-child {
+    border-radius: 15px 0 0 15px;
+}
+
+.prices__table th:last-child,
+.prices__table td:last-child {
+    border-radius: 0 15px 15px 0;
+}
+
+.prices__caption {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: #9d9d9d;
+}
+
+/* ==========================================================================
+   10. Блок «services»
+   ========================================================================== */
+
+.services__content {
+    position: relative;
+    z-index: 1;
+}
+
+.services__text p {
+    margin: 0;
+}
+
+.services__text p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.services__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.services__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Flex, чтобы длинная подпись переносилась ровно,
+   не уезжая под чекбокс */
+.services__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.services__item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.services__checkbox {
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.services__label {
+    font-size: 15px;
+}
+
+.services__right {
+    display: flex;
+    flex-direction: column;
+}
+
+.services__price {
+    margin-top: auto;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #242424;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* ==========================================================================
+   11. Блок «reviews»
+   ========================================================================== */
+
+.page-section.reviews {
+    padding-bottom: 0;
+    margin-bottom: 20px;
+}
+
+.reviews__item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #f8f8f8;
+}
+
+.reviews__item:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.reviews__item-image-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.reviews__item-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.reviews__item-content {
+    align-self: center;
+}
+
+.reviews__item-text {
+    font-size: 14px;
+}
+
+.reviews__item-text p {
+    margin: 0;
+}
+
+.reviews__item-text p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.reviews__item-author {
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   12. Блок «contacts»
+   ========================================================================== */
+
+.page-section.contacts {
+    padding-top: 0;
+    padding-bottom: 60px;
+}
+
+.contacts__content {
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #f8f8f8;
+}
+
+.contacts__text {
+    margin: 0 0 20px;
+    font-size: 15px;
+}
+
+.contacts__input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+.contacts__input:focus-visible {
+    outline: 2px solid #242424;
+    outline-offset: 1px;
+}
+
+.contacts__form-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.contacts__tariff-label {
+    font-weight: 700;
+}
+
+.contacts__select {
+    padding: 10px;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.contacts__submit {
+    display: block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #242424;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contacts__submit:hover {
+    opacity: 0.8;
+}
+
+.contacts__submit:focus-visible {
+    outline: 2px solid #242424;
+    outline-offset: 2px;
+}
+
+.contacts__address {
+    margin-top: 25px;
+    font: inherit;
+}
+
+.contacts__btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 70px 15px 20px;
+    border-radius: 15px;
+    background-color: #242424;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Иконка Telegram — псевдоэлементом, чтобы не тащить лишний <img> */
+.contacts__btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    background-image: url(./images/telegram.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.contacts__btn:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contacts__btn:hover::after {
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   13. Сайдбар
+   ========================================================================== */
+
+.sidebar {
+    padding: 25px 15px;
+    background-color: #242424;
+    color: #fff;
+}
+
+.sidebar__title {
+    margin: 0 0 20px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.sidebar__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.sidebar__list li:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   14. Блок «card»
+   ========================================================================== */
+
+.card__image-link {
+    display: block;
+    width: 100%;
+    height: 160px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card__image-link:hover {
+    opacity: 0.5;
+}
+
+.card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__title {
+    margin: 10px 0 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.card__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card__title a:hover {
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   15. Футер
+   ========================================================================== */
+
+.page-footer {
+    padding: 20px 0;
+    background-color: #242424;
+    color: #fff;
+}
+
+.page-footer__copyright {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   16. Брейкпоинты (mobile first: только min-width)
+   ========================================================================== */
+
+/* ---------- Планшет: 768px+ ---------- */
+@media (min-width: 768px) {
+    .page {
+        font-size: 18px;
+    }
+
+    .page-header {
+        padding: 20px 0;
+    }
+
+    .navbar__item:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .intro {
+        padding: 70px 0;
+    }
+
+    .intro__title {
+        font-size: 36px;
+    }
+
+    /* Сетка «текст + картинка» — уже в две колонки */
+    .program__row {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .program__image-wrapper {
+        height: 100%;
+        min-height: 280px;
+    }
+
+    /* Три картинки аудитории в ряд */
+    .auditory__top {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Доп. услуги: список слева, сумма справа */
+    .services__row {
+        grid-template-columns: 1fr 220px;
+        align-items: end;
+    }
+
+    /* Отзыв: аватар крупнее */
+    .reviews__item {
+        grid-template-columns: 120px 1fr;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .reviews__item-image-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .reviews__item-text {
+        font-size: 16px;
+    }
+
+    .reviews__item-author {
+        font-size: 16px;
+    }
+
+    .contacts__content {
+        padding: 25px;
+    }
+
+    .contacts__form-bottom {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .contacts__btn {
+        padding: 18px 90px 18px 30px;
+        font-size: 22px;
+    }
+
+    .contacts__btn::after {
+        right: 25px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .sidebar {
+        padding: 30px 20px;
+    }
+
+    .sidebar__title {
+        font-size: 26px;
+    }
+
+    .sidebar__list li:not(:last-child) {
+        margin-bottom: 35px;
+    }
+
+    .card__title {
+        font-size: 16px;
+    }
+
+    .page-footer {
+        padding: 30px 0;
+    }
+
+    .page-footer__copyright {
+        font-size: 16px;
+    }
+}
+
+/* ---------- Десктоп: 1024px+ ---------- */
+@media (min-width: 1024px) {
+    .intro {
+        min-height: 610px;
+        padding-top: 180px;
+        padding-bottom: 120px;
+    }
+
+    .intro__title {
+        font-size: 50px;
+    }
+
+    /* Контент + сайдбар в две колонки,
+       фон — двухцветный (белый слева, тёмный справа) */
+    .page-content {
+        background-image: linear-gradient(90deg, #fff 50%, #242424 50%);
+    }
+
+    .page-content .container {
+        display: grid;
+        grid-template-columns: 1fr 260px;
+    }
+
+    .page-section {
+        padding: 40px 80px 40px 0;
+    }
+
+    .page-section.contacts {
+        padding-bottom: 80px;
+    }
+
+    .program__title,
+    .auditory__title,
+    .prices__title,
+    .services__title,
+    .reviews__title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    .program__row {
+        grid-template-columns: 440px 1fr;
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    .program__image-wrapper {
+        height: 320px;
+        min-height: 0;
+    }
+
+    .program__subtitle {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .auditory__image-wrapper {
+        height: 160px;
+    }
+
+    .auditory__list {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+
+    .prices__table-wrapper {
+        margin-top: 30px;
+    }
+
+    .prices__table {
+        min-width: 0;
+    }
+
+    .prices__table th {
+        padding: 20px;
+    }
+
+    .prices__table td {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .prices__caption {
+        font-size: 14px;
+    }
+
+    .services__row {
+        grid-template-columns: 1fr 250px;
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    .services__label {
+        font-size: 16px;
+    }
+
+    .services__price {
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .reviews__item {
+        grid-template-columns: 150px 1fr;
+        gap: 40px;
+        padding: 20px 80px 20px 40px;
+    }
+
+    .reviews__item-image-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .contacts__content {
+        padding: 20px 280px 20px 40px;
+    }
+
+    .contacts__input {
+        padding: 15px;
+    }
+
+    .contacts__btn {
+        padding: 20px 130px 20px 40px;
+        font-size: 40px;
+    }
+
+    .contacts__btn::after {
+        right: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .sidebar {
+        padding: 40px 0 40px 20px;
+    }
+
+    .sidebar__title {
+        font-size: 30px;
+    }
+
+    .sidebar__list li:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
+    .page-footer .container {
+        padding-right: 390px;
+    }
+
+    .page-section--with-bg::before {
+        left: -9999px;
+        right: 0;
+    }
+}

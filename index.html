@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экскурсия по Санкт-Петербургу</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+
+    <!-- Шапка: навигация -->
+    <header class="page-header">
+        <div class="container">
+            <nav class="navbar" aria-label="Основная навигация">
+                <ul class="navbar__list">
+                    <li class="navbar__item">
+                        <a class="navbar__link" href="#intro">Главная</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__link" href="#program">Программа</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__link" href="#auditory">Для кого</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__link" href="#prices">Цены</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__link" href="#contacts">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Первый экран -->
+        <section class="intro" id="intro">
+            <div class="container">
+                <div class="intro__content">
+                    <h1 class="intro__title">Авторская экскурсия по Санкт-Петербургу</h1>
+                    <div class="intro__text">
+                        <p>Откройте для себя великолепие Санкт-Петербурга с нашими увлекательными экскурсиями.</p>
+                        <p>Погрузитесь в богатую культуру и архитектуру, посетите известные достопримечательности.</p>
+                        <p>Наши экскурсии созданы, чтобы показать вам самое лучшее, что Санкт-Петербург готов предложить.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контент: основная колонка + сайдбар -->
+        <div class="page-content">
+            <div class="container">
+
+                <div class="page-content__main">
+
+                    <!-- Что предлагаем -->
+                    <section class="page-section program" id="program">
+                        <h2 class="program__title">Что мы предлагаем?</h2>
+                        <div class="program__text">
+                            <p>Приглашаем погрузиться в историю и культуру Санкт-Петербурга.</p>
+                        </div>
+                        <div class="program__row">
+                            <div class="program__left">
+                                <div class="program__image-wrapper">
+                                    <img
+                                        class="program__image"
+                                        src="images/program.jpg"
+                                        width="630"
+                                        height="531"
+                                        alt="Молодые люди позируют на фоне Эрмитажа, Санкт-Петербург"
+                                    >
+                                </div>
+                            </div>
+                            <div class="program__right">
+                                <h3 class="program__subtitle">На наших экскурсиях <br> вас ждут:</h3>
+                                <ol class="program__list">
+                                    <li>Профессиональный гид.</li>
+                                    <li>Уникальные маршруты.</li>
+                                    <li>Комфортный трансфер.</li>
+                                    <li>Прогулка по каналам.</li>
+                                    <li>Лучшие фото-локации.</li>
+                                    <li>Прогулки по крышам.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Аудитория -->
+                    <section class="page-section page-section--with-bg auditory" id="auditory">
+                        <div class="auditory__content">
+                            <h2 class="auditory__title">Кому подойдет экскурсия?</h2>
+                            <div class="auditory__top">
+                                <div class="auditory__image-wrapper">
+                                    <img class="auditory__image" src="images/auditory-1.jpg" alt="Девушка на экскурсии по Санкт-Петербургу" width="325" height="182">
+                                </div>
+                                <div class="auditory__image-wrapper">
+                                    <img class="auditory__image" src="images/auditory-2.jpg" alt="Друзья на экскурсии по Санкт-Петербургу" width="325" height="182">
+                                </div>
+                                <div class="auditory__image-wrapper">
+                                    <img class="auditory__image" src="images/auditory-3.jpg" alt="Семья на экскурсии по Санкт-Петербургу" width="325" height="182">
+                                </div>
+                            </div>
+                            <div class="auditory__bottom">
+                                <ul class="auditory__list">
+                                    <li>Компаниям друзей</li>
+                                    <li>Семьям с детьми старше 12 лет</li>
+                                    <li>Организованным группам от 15 человек</li>
+                                    <li>Индивидуальным путешественникам</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Тарифы -->
+                    <section class="page-section prices" id="prices">
+                        <h2 class="prices__title">Какие есть тарифы?</h2>
+                        <div class="prices__text">
+                            <p>Мы знаем, что каждое путешествие уникально. Поэтому разработали несколько тарифов, чтобы вы могли выбрать самый комфортный для себя. Независимо от выбранного тарифа, вас ждет незабываемое путешествие.</p>
+                        </div>
+                        <div class="prices__table-wrapper">
+                            <table class="prices__table">
+                                <thead>
+                                    <tr>
+                                        <th>Тариф</th>
+                                        <th>Группа</th>
+                                        <th>Стоимость</th>
+                                        <th>Программа</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Эконом</td>
+                                        <td>От 15 человек</td>
+                                        <td>1500 руб.</td>
+                                        <td>Пешая прогулка,<br>Прогулка по крышам</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Комфорт</td>
+                                        <td>От 7 человек</td>
+                                        <td>2500 руб.</td>
+                                        <td>Пешая прогулка,<br>Экскурсия по рекам и каналам,<br>Прогулка по крышам</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Премиум</td>
+                                        <td>от 4 до 6 человек</td>
+                                        <td>4200 руб.</td>
+                                        <td>Пешая прогулка,<br>Экскурсия по рекам и каналам,<br>Прогулка по крышам,<br>Экскурсия в Петергоф</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Люкс</td>
+                                        <td>1–2 человека</td>
+                                        <td>6000 руб.</td>
+                                        <td>Эксклюзивные маршруты,<br>Пешая прогулка,<br>Экскурсия по рекам и каналам,<br>Прогулка по крышам,<br>Экскурсия в Петергоф</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="prices__caption">
+                            Мы предлагаем различные варианты оплаты. Менеджер поможет подобрать оптимальный вариант.
+                        </p>
+                    </section>
+
+                    <!-- Дополнительные услуги -->
+                    <section class="page-section page-section--with-bg services">
+                        <div class="services__content">
+                            <h2 class="services__title">Дополнительные услуги</h2>
+                            <div class="services__text">
+                                <p>При выборе дополнительных опций к экскурсиям вы получаете возможность настроить свой опыт путешествия по своему вкусу. В зависимости от ваших предпочтений и потребностей, вы можете выбрать опцию трансфера, питания или сопровождения.</p>
+                            </div>
+                            <div class="services__row">
+                                <div class="services__left">
+                                    <form class="services__form" method="post" action="/">
+                                        <ul class="services__list">
+                                            <li class="services__item">
+                                                <input class="services__checkbox" type="checkbox" name="services" value="transfer" data-price="100" id="service-transfer">
+                                                <label class="services__label" for="service-transfer">Трансфер до места начала экскурсии</label>
+                                            </li>
+                                            <li class="services__item">
+                                                <input class="services__checkbox" type="checkbox" name="services" value="disabled_transfer" data-price="100" id="service-disabled-transfer">
+                                                <label class="services__label" for="service-disabled-transfer">Трансфер для людей из маломобильных групп населения</label>
+                                            </li>
+                                            <li class="services__item">
+                                                <input class="services__checkbox" type="checkbox" name="services" value="breakfast" data-price="100" id="service-breakfast">
+                                                <label class="services__label" for="service-breakfast">Завтрак</label>
+                                            </li>
+                                            <li class="services__item">
+                                                <input class="services__checkbox" type="checkbox" name="services" value="lunch" data-price="100" id="service-lunch">
+                                                <label class="services__label" for="service-lunch">Обед</label>
+                                            </li>
+                                            <li class="services__item">
+                                                <input class="services__checkbox" type="checkbox" name="services" value="dinner" data-price="100" id="service-dinner">
+                                                <label class="services__label" for="service-dinner">Ужин</label>
+                                            </li>
+                                            <li class="services__item">
+                                                <input class="services__checkbox" type="checkbox" name="services" value="translator" data-price="100" id="service-translator">
+                                                <label class="services__label" for="service-translator">Переводчик с русского на английский язык</label>
+                                            </li>
+                                            <li class="services__item">
+                                                <input class="services__checkbox" type="checkbox" name="services" value="children_guide" data-price="100" id="service-children-guide">
+                                                <label class="services__label" for="service-children-guide">Экскурсовод для детей</label>
+                                            </li>
+                                            <li class="services__item">
+                                                <input class="services__checkbox" type="checkbox" name="services" value="sign_language_interpreter" data-price="100" id="service-sign-language">
+                                                <label class="services__label" for="service-sign-language">Сурдопереводчик</label>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                </div>
+                                <div class="services__right">
+                                    <div class="services__price" id="total-price">Сумма: 0 рублей</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Отзывы -->
+                    <section class="page-section reviews">
+                        <h2 class="reviews__title">Отзывы клиентов</h2>
+
+                        <div class="reviews__item">
+                            <div class="reviews__item-image-wrapper">
+                                <img class="reviews__item-image" src="images/reviews-1.jpg" alt="Молодая пара, посетившая Санкт-Петербург" width="150" height="150">
+                            </div>
+                            <div class="reviews__item-content">
+                                <div class="reviews__item-text">
+                                    <p>Спасибо за незабываемую экскурсию! Увозим с собой нереальные фотографии! Организаторам огромное спасибо, что даже в дождь путешествие было комфортным.</p>
+                                </div>
+                                <p class="reviews__item-author">Аня и Сережа, Пермь</p>
+                            </div>
+                        </div>
+
+                        <div class="reviews__item">
+                            <div class="reviews__item-image-wrapper">
+                                <img class="reviews__item-image" src="images/reviews-2.jpg" alt="Друзья, посетившие Санкт-Петербург" width="150" height="150">
+                            </div>
+                            <div class="reviews__item-content">
+                                <div class="reviews__item-text">
+                                    <p>Мы провели замечательный день с вашей экскурсией по крышам Санкт-Петербурга! Это было настоящее приключение. Рекомендуем!</p>
+                                </div>
+                                <p class="reviews__item-author">Света, Алена, Саша и Ваня, Краснодар</p>
+                            </div>
+                        </div>
+
+                        <div class="reviews__item">
+                            <div class="reviews__item-image-wrapper">
+                                <img class="reviews__item-image" src="images/reviews-3.jpg" alt="Девушка, посетившая Санкт-Петербург" width="150" height="150">
+                            </div>
+                            <div class="reviews__item-content">
+                                <div class="reviews__item-text">
+                                    <p>Мы просто влюбились в Санкт-Петербург благодаря этой экскурсии! Суперский гид рассказал нам удивительные истории о городе и его жителях. Отдельно отмечу маршрут. Не первый раз в Питере, но эти локации увидел впервые. Класс!</p>
+                                </div>
+                                <p class="reviews__item-author">Кристина, Архангельск</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Форма обратной связи -->
+                    <section class="page-section contacts" id="contacts">
+                        <div class="contacts__content">
+                            <p class="contacts__text">Для подробной информации заполните форму. Наши менеджеры с вами свяжутся.</p>
+                            <form class="contacts__form" method="post" action="/">
+
+                                <label class="visually-hidden" for="field-name">Имя</label>
+                                <input class="contacts__input" id="field-name" name="name" type="text" placeholder="Имя">
+
+                                <label class="visually-hidden" for="field-surname">Фамилия</label>
+                                <input class="contacts__input" id="field-surname" name="surname" type="text" placeholder="Фамилия">
+
+                                <label class="visually-hidden" for="field-email">E-mail</label>
+                                <input class="contacts__input" id="field-email" name="email" type="email" placeholder="E-mail">
+
+                                <label class="visually-hidden" for="field-phone">Номер телефона</label>
+                                <input class="contacts__input" id="field-phone" name="phone" type="tel" placeholder="Номер телефона">
+
+                                <div class="contacts__form-bottom">
+                                    <label class="contacts__tariff-label" for="field-tariff">Выберите тариф</label>
+                                    <select class="contacts__select" name="tariff" id="field-tariff">
+                                        <option value="economy">Эконом</option>
+                                        <option value="comfort">Комфорт</option>
+                                        <option value="premium" selected>Премиум</option>
+                                        <option value="luxury">Люкс</option>
+                                    </select>
+                                </div>
+
+                                <button class="contacts__submit" type="submit">Отправить</button>
+                            </form>
+                        </div>
+                        <address class="contacts__address">
+                            <a class="contacts__btn" href="https://t.me/example" target="_blank" rel="noopener noreferrer">
+                                Свяжитесь с автором
+                            </a>
+                        </address>
+                    </section>
+
+                </div>
+
+                <!-- Сайдбар -->
+                <aside class="sidebar">
+                    <h2 class="sidebar__title">Другие экскурсии</h2>
+                    <ul class="sidebar__list">
+                        <li>
+                            <article class="card">
+                                <a class="card__image-link" href="#">
+                                    <img class="card__image" src="./images/card-1.jpg" alt="Экскурсия по рекам и каналам" width="260" height="160">
+                                </a>
+                                <h3 class="card__title"><a href="#">Экскурсия по рекам и каналам</a></h3>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="card">
+                                <a class="card__image-link" href="#">
+                                    <img class="card__image" src="./images/card-2.jpg" alt="Мистический Петербург" width="260" height="160">
+                                </a>
+                                <h3 class="card__title"><a href="#">Мистический Петербург</a></h3>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="card">
+                                <a class="card__image-link" href="#">
+                                    <img class="card__image" src="./images/card-3.jpg" alt="Пешая прогулка по городу" width="260" height="160">
+                                </a>
+                                <h3 class="card__title"><a href="#">Пешая прогулка по городу</a></h3>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="card">
+                                <a class="card__image-link" href="#">
+                                    <img class="card__image" src="./images/card-4.jpg" alt="Семь мостов" width="260" height="160">
+                                </a>
+                                <h3 class="card__title"><a href="#">Семь мостов</a></h3>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="card">
+                                <a class="card__image-link" href="#">
+                                    <img class="card__image" src="./images/card-5.jpg" alt="Литературный Петербург" width="260" height="160">
+                                </a>
+                                <h3 class="card__title"><a href="#">Литературный Петербург</a></h3>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="card">
+                                <a class="card__image-link" href="#">
+                                    <img class="card__image" src="./images/card-6.jpg" alt="Акватория Невы" width="260" height="160">
+                                </a>
+                                <h3 class="card__title"><a href="#">Акватория Невы</a></h3>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="card">
+                                <a class="card__image-link" href="#">
+                                    <img class="card__image" src="images/card-7.jpg" alt="Прогулка под разводными мостами" width="260" height="160">
+                                </a>
+                                <h3 class="card__title"><a href="#">Прогулка под разводными мостами</a></h3>
+                            </article>
+                        </li>
+                    </ul>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <p class="page-footer__copyright">2023 год, Авторская экскурсия по Санкт-Петербургу</p>
+        </div>
+    </footer>
+
+    <!-- Скрипт подсчёта суммы услуг -->
+    <script>
+        // Все чекбоксы услуг и элемент для вывода суммы
+        const serviceCheckboxes = document.querySelectorAll('input[name="services"]');
+        const totalPriceElement = document.getElementById('total-price');
+
+        // Пересчёт суммы
+        function updateTotalPrice() {
+            let total = 0;
+
+            serviceCheckboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    // parseInt с системой счисления 10 — по стандарту ESLint
+                    total += parseInt(checkbox.dataset.price, 10);
+                }
+            });
+
+            totalPriceElement.textContent = `Сумма: ${total} рублей`;
+        }
+
+        // Обработчик на каждый чекбокс
+        serviceCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener('change', updateTotalPrice);
+        });
+    </script>
+</body>
+</html>
